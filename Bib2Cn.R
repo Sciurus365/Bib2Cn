@@ -1,11 +1,7 @@
 Bib2Cn <- function(file_in, file_out){
-  if(! "RefManageR" %in% installed.packages()){
-    install.packages("RefManageR")
-  }
   if(! "tidyverse" %in% installed.packages()){
     install.packages("tidyverse")
   }
-  library(RefManageR)
   library(tidyverse)
   temp <- readLines(file_in, encoding = "UTF-8")
   temp[str_detect(temp, "author.*[\u4E00-\u9FA5]")] <- 
